@@ -1,0 +1,107 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
+
+/**
+ *
+ * Beschreibung
+ *
+ * @version 1.0 vom 12.08.2021
+ * @author 
+ */
+
+public class LifeSimulator2 extends JFrame {
+  // Anfang Attribute
+  private JLabel Label1 = new JLabel();
+  private JLabel lOptions = new JLabel();
+  private JButton bStartgame = new JButton();
+  private JButton b = new JButton();
+  // Ende Attribute
+  
+  public LifeSimulator2() { 
+    // Frame-Initialisierung
+    super();
+    setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+    int frameWidth = 502; 
+    int frameHeight = 295;
+    setSize(frameWidth, frameHeight);
+    Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+    int x = (d.width - getSize().width) / 2;
+    int y = (d.height - getSize().height) / 2;
+    setLocation(x, y);
+    setTitle("LifeSimulator2");
+    setResizable(false);
+    Container cp = getContentPane();
+    cp.setLayout(null);
+    // Anfang Komponenten
+    
+    Label1.setBounds(0, 0, 1534, 24);
+    Label1.setText("Welcome to CGG's Life Simulator 2!");
+    Label1.setBackground(Color.GREEN);
+    Label1.setOpaque(true);
+    cp.add(Label1);
+    cp.setBackground(Color.GRAY);
+    lOptions.setBounds(0, 72, 62, 20);
+    lOptions.setText("options:");
+    lOptions.setBackground(Color.WHITE);
+    lOptions.setOpaque(true);
+    cp.add(lOptions);
+    bStartgame.setBounds(1, 117, 107, 25);
+    bStartgame.setText("start game");
+    bStartgame.setMargin(new Insets(2, 2, 2, 2));
+    bStartgame.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        bStartgame_ActionPerformed(evt);
+      }
+    });
+    bStartgame.setBackground(Color.BLUE);
+    bStartgame.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, Color.BLACK));
+    cp.add(bStartgame);
+    b.setBounds(1, 149, 107, 25);
+    b.setText(" ");
+    b.setMargin(new Insets(2, 2, 2, 2));
+    b.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        b_ActionPerformed(evt);
+      }
+    });
+    b.setBackground(Color.BLUE);
+    b.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    cp.add(b);
+    // Ende Komponenten
+    
+    setVisible(true);
+  } // end of public LifeSimulator2
+  
+  // Anfang Methoden
+  
+  public static void main(String[] args) {
+    new LifeSimulator2();
+  } // end of main
+  int akku = 0;
+  public void bStartgame_ActionPerformed(ActionEvent evt) {
+    if (akku == 0) {
+      Label1.setText("This is a game about a life where you have to choose between 2 choices.");
+      bStartgame.setText("continue");
+      akku++;
+    } else {
+      Label1.setText("Game discontinued due to fucked up brain.");
+      
+    } // end of if-else
+    
+    
+    
+  
+    // TODO hier Quelltext einfügen
+    
+  } // end of bStartgame_ActionPerformed
+
+  public void b_ActionPerformed(ActionEvent evt) {
+    
+    // TODO hier Quelltext einfügen
+    
+  } // end of b_ActionPerformed
+
+  // Ende Methoden
+} // end of class LifeSimulator2
