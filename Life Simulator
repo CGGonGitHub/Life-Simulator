@@ -6,7 +6,7 @@
  * @author 
  */
 import java.util.Scanner;
-public class test {
+public class LifeSimulator {
   
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);   
@@ -163,7 +163,7 @@ public class test {
                             System.out.println("");
                             System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             String m = input.next();
-                            if (m.equals("/stay")) {
+                            if (m.equals("/school")) {
                               System.out.println("correct answer!");
                               System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                               System.out.println("Age: 12");
@@ -492,6 +492,6 @@ public class test {
     
   } // end of main
       
-} // end of class test
+} // end of class LifeSimulator
 
         
