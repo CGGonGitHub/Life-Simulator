@@ -6,7 +6,7 @@
  * @author 
  */
 import java.util.Scanner;
-public class LifeSimulator {
+public class test {
   
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);   
@@ -232,7 +232,7 @@ public class LifeSimulator {
                                         System.out.println("rush to sex = /sex");
                                         System.out.println("no = /no");
                                         System.out.println("");
-                                        System.out.println(""------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                                         String s = input.next();
                                         if (s.equals("/no")) {
                                           System.out.println("correct answer!");
@@ -268,7 +268,7 @@ public class LifeSimulator {
                                         System.out.println("Result:");
                                         System.out.println("  //////////////////////////");
                                         System.out.println(" //You cried to death lol//");
-                                        System.out.println("//////////////////////////);
+                                        System.out.println("//////////////////////////");
                                           
                                         } // end of if-else
                                         
@@ -302,7 +302,7 @@ public class LifeSimulator {
                                      
                                       //15yo  
                                     } else {
-                                      System.out.println(""------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                      System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                                       System.out.println("Result:");    
                                       System.out.println("  ////////////////////////////////");
                                       System.out.println(" ///You died of lung cancer lol//");
@@ -492,6 +492,6 @@ public class LifeSimulator {
     
   } // end of main
       
-} // end of class LifeSimulator
+} // end of class test
 
         
