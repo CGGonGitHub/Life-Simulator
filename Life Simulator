@@ -6,7 +6,7 @@
  * @author 
  */
 import java.util.Scanner;
-public class LifeSimulator {
+public class LifeSmulator {
   
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);   
@@ -17,6 +17,9 @@ public class LifeSimulator {
      *
      */
     System.out.println("Welcome to CGG's Life-Simulator!");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Please make this window fullscreen");
     System.out.println("");
     System.out.println("options:");
     System.out.println("start = /start");
@@ -210,7 +213,7 @@ public class LifeSimulator {
                                     System.out.println("");
                                     System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                                     String q = input.next();
-                                      if (q.equals("NO!")) {
+                                      if (q.equals("/NO!")) {
                                       System.out.println("correct answer!");
                                       System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                                       System.out.println("Age: 16");
@@ -257,7 +260,7 @@ public class LifeSimulator {
                                         System.out.println("");
                                         System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                                         String u = input.next();
-                                        if (u.equals("/bruh")) {
+                                        if (u.equals("/fun")) {
                                         System.out.println("correct answer!");
                                         System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                                         
