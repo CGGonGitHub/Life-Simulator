@@ -1,107 +1,523 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.event.*;
-
 /**
  *
  * Beschreibung
  *
- * @version 1.0 vom 12.08.2021
+ * @version 1.0 vom 10.08.2021
  * @author 
  */
-
-public class LifeSimulator2 extends JFrame {
-  // Anfang Attribute
-  private JLabel Label1 = new JLabel();
-  private JLabel lOptions = new JLabel();
-  private JButton bStartgame = new JButton();
-  private JButton b = new JButton();
-  // Ende Attribute
-  
-  public LifeSimulator2() { 
-    // Frame-Initialisierung
-    super();
-    setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 502; 
-    int frameHeight = 295;
-    setSize(frameWidth, frameHeight);
-    Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-    int x = (d.width - getSize().width) / 2;
-    int y = (d.height - getSize().height) / 2;
-    setLocation(x, y);
-    setTitle("LifeSimulator2");
-    setResizable(false);
-    Container cp = getContentPane();
-    cp.setLayout(null);
-    // Anfang Komponenten
-    
-    Label1.setBounds(0, 0, 1534, 24);
-    Label1.setText("Welcome to CGG's Life Simulator 2!");
-    Label1.setBackground(Color.GREEN);
-    Label1.setOpaque(true);
-    cp.add(Label1);
-    cp.setBackground(Color.GRAY);
-    lOptions.setBounds(0, 72, 62, 20);
-    lOptions.setText("options:");
-    lOptions.setBackground(Color.WHITE);
-    lOptions.setOpaque(true);
-    cp.add(lOptions);
-    bStartgame.setBounds(1, 117, 107, 25);
-    bStartgame.setText("start game");
-    bStartgame.setMargin(new Insets(2, 2, 2, 2));
-    bStartgame.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent evt) { 
-        bStartgame_ActionPerformed(evt);
-      }
-    });
-    bStartgame.setBackground(Color.BLUE);
-    bStartgame.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, Color.BLACK));
-    cp.add(bStartgame);
-    b.setBounds(1, 149, 107, 25);
-    b.setText(" ");
-    b.setMargin(new Insets(2, 2, 2, 2));
-    b.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent evt) { 
-        b_ActionPerformed(evt);
-      }
-    });
-    b.setBackground(Color.BLUE);
-    b.setCursor(new Cursor(Cursor.HAND_CURSOR));
-    cp.add(b);
-    // Ende Komponenten
-    
-    setVisible(true);
-  } // end of public LifeSimulator2
-  
-  // Anfang Methoden
+import java.util.Scanner;
+public class LifeSimulator {
   
   public static void main(String[] args) {
-    new LifeSimulator2();
-  } // end of main
-  int akku = 0;
-  public void bStartgame_ActionPerformed(ActionEvent evt) {
-    if (akku == 0) {
-      Label1.setText("This is a game about a life where you have to choose between 2 choices.");
-      bStartgame.setText("continue");
-      akku++;
-    } else {
-      Label1.setText("Game discontinued due to fucked up brain.");
+    Scanner input = new Scanner(System.in);   
+    
+   
+    
+    
+    /**
+     *  
+     *  Game
+     *
+     */
+    System.out.println("Welcome to CGG's Life-Simulator!");
+    System.out.println("");
+    System.out.println("options:");
+    System.out.println("start = /start");
+    System.out.println("");
+    System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+    String a = input.next();
+    if (a.equals("/start")) {
+    System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");  
+    System.out.println("Story teller: This is a game about a life where you have to choose between 2 choices. Choose the right one or you die. You get older the longer you play and if you die a natural death at the end, you win.");                                                                                                                                                                                                            
+    System.out.println("");                                               
+    System.out.println("options:");  
+    System.out.println("continue = /continue");  
+    System.out.println("");  
+    System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+      String b = input.next();
+      if (b.equals("/continue")) {
+        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("Age: 1");
+        System.out.println("Do you want to start walking?");        
+        System.out.println("");
+        System.out.println("options:");
+        System.out.println("start walking = /walking");
+        System.out.println("not start walking = /lazy");
+        System.out.println("");                                                               
+        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        String c = input.next();
+          if (c.equals("/walking")) {
+          System.out.println("correct answer!");
+          System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+          System.out.println("Age: 2");
+          System.out.println("Do you want to start talking?");   
+          System.out.println("");
+          System.out.println("options:");
+          System.out.println("start talking = /talk");
+          System.out.println("not start talking = /lazy");
+          System.out.println("");
+          System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+          String d = input.next();
+          if (d.equals("/talk")) {
+            System.out.println("correct answer!");
+            System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            System.out.println("Age: 3");
+            System.out.println("Do you want to sleep?");
+            System.out.println("");
+            System.out.println("options:");
+            System.out.println("sleep = /sleep");
+            System.out.println("not = /not");                  
+            System.out.println("");
+            System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            String e = input.next();
+            if (e.equals("/sleep")) {
+              System.out.println("correct answer!");
+              System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+              System.out.println("Age: 4");
+              System.out.println("Do you want to ask lots of questions?");
+              System.out.println("");
+              System.out.println("options:");
+              System.out.println("yes = /yes");
+              System.out.println("no = /no");
+              System.out.println("");
+              System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+              String f = input.next();
+              if (f.equals("/yes")) {
+                System.out.println("correct answer!");
+                System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                System.out.println("Age: 5");
+                System.out.println("Someone offers you a loli");
+                System.out.println("");
+                System.out.println("options:");
+                System.out.println("suck it = /sucky sucky");
+                System.out.println("run away = /run");
+                System.out.println("");
+                System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                String g = input.next();
+                if (g.equals("/run")) {
+                  System.out.println("correct answer!");
+                  System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                  System.out.println("Age: 6");
+                  System.out.println("Do you want to annoy your parents?");
+                  System.out.println("");
+                  System.out.println("options:");
+                  System.out.println("annoy = /annoy");
+                  System.out.println("be quiet = /quiet");
+                  System.out.println("");
+                  System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                  String h = input.next();
+                  if (h.equals("/quiet")) {
+                    System.out.println("correct answer!");
+                    System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                    System.out.println("Age: 7");
+                    System.out.println("Do you want to build with Lego®");
+                    System.out.println("");
+                    System.out.println("options:");
+                    System.out.println("yes lego pls = /lego");
+                    System.out.println("no = no");
+                    System.out.println("");
+                    System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                    String i = input.next();
+                    if (i.equals("/lego")) {
+                      System.out.println("correct answer!");
+                      System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                      System.out.println("Age: 8");
+                      System.out.println("Do you want to have friends?");
+                      System.out.println("");
+                      System.out.println("options:");
+                      System.out.println("have friends = /friends");
+                      System.out.println("not have friends = /lonely");
+                      System.out.println("");
+                      System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                      String j = input.next();
+                      if (j.equals("/friends")) {
+                        System.out.println("correct answer!");
+                        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                        System.out.println("Age: 9");
+                        System.out.println("Do you want to start playing fortnite?");
+                        System.out.println("");
+                        System.out.println("options:");
+                        System.out.println("play fortnite = /fortnite");
+                        System.out.println("not play = /life");
+                        System.out.println("");
+                        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                        String k = input.next();
+                        if (k.equals("/life")) {
+                          System.out.println("correct answer!");
+                          System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                          System.out.println("Age: 10");
+                          System.out.println("Do you want to play minecraft?");
+                          System.out.println("");
+                          System.out.println("options:");
+                          System.out.println("yes = /minecraft");
+                          System.out.println("no = /no");
+                          System.out.println("");
+                          System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                          String l = input.next();
+                          if (l.equals("/minecraft")) {
+                            System.out.println("correct answer!");
+                            System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            System.out.println("Age: 11");
+                            System.out.println("Do you want to go to school or stay home?");
+                            System.out.println("");
+                            System.out.println("options:");
+                            System.out.println("go to school = /school");
+                            System.out.println("stay home = /stay");
+                            System.out.println("");
+                            System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            String m = input.next();
+                            if (m.equals("/school")) {
+                              System.out.println("correct answer!");
+                              System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                              System.out.println("Age: 12");
+                              System.out.println("Do you decide to drink energy drinks or not?");
+                              System.out.println("");  
+                              System.out.println("options:");
+                              System.out.println("drink energy drink = /drink");
+                              System.out.println("not drink = /nah");
+                              System.out.println("");
+                              System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                              String n = input.next();
+                              if (n.equals("/nah")) {
+                                System.out.println("correct answer!");
+                                System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                System.out.println("Age: 13");
+                                System.out.println("You have a test tomorrow in school.");
+                                System.out.println("");
+                                System.out.println("options:");
+                                System.out.println("learn for the test = /learn");
+                                System.out.println("not learn = /later");
+                                System.out.println("");
+                                System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                String o = input.next();
+                                if (o.equals("/learn")) {
+                                  System.out.println("correct answer!");
+                                  System.out.println("Age: 14");
+                                  System.out.println("Soemone on Discord sent you a porn link.");
+                                  System.out.println("");
+                                  System.out.println("options:");
+                                  System.out.println("open the link = /open");
+                                  System.out.println("block person = /block");
+                                  System.out.println("");
+                                  System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                  String p = input.next();
+                                  if (p.equals("/block")) {
+                                    System.out.println("correct answer!");
+                                    System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                    System.out.println("Age: 15");
+                                    System.out.println("Someone offers you a cigarette.");
+                                    System.out.println("");
+                                    System.out.println("options:");
+                                    System.out.println("smoke the cigarette = /smoke");
+                                    System.out.println("tell him to fuck off = /NO!");
+                                    System.out.println("");
+                                    System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                    String q = input.next();
+                                      if (q.equals("NO!")) {
+                                      System.out.println("correct answer!");
+                                      System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                      System.out.println("Age: 16");
+                                      System.out.println("Someone offers you alcohol.");
+                                      System.out.println("");
+                                      System.out.println("options:");
+                                      System.out.println("drink the alcohol = /drink");
+                                      System.out.println("no thank you = /noty");
+                                      System.out.println("");
+                                      System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                      String r = input.next();
+                                      if (r.equals("/noty")) {
+                                        System.out.println("correct answer!");                                       
+                                        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        System.out.println("Age: 17");
+                                        System.out.println("You got a girlfriend :0. Do you rush to sex?");
+                                        System.out.println("");
+                                        System.out.println("options:");
+                                        System.out.println("rush to sex = /sex");
+                                        System.out.println("no = /no");
+                                        System.out.println("");
+                                        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        String s = input.next();
+                                        if (s.equals("/no")) {
+                                          System.out.println("correct answer!");
+                                          System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                          System.out.println("Age: 18");
+                                        System.out.println("Someone offers you $100 for licking his feet.");
+                                        System.out.println("");
+                                        System.out.println("options:");
+                                        System.out.println("lick feet = /lick");
+                                        System.out.println("not lick = /bruh");
+                                        System.out.println("");
+                                        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        String t = input.next();
+                                        if (t.equals("/bruh")) {
+                                        System.out.println("correct answer!");
+                                        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        System.out.println("Age: 19");
+                                        System.out.println("Your girlfriend leaves you.");
+                                        System.out.println("");                       
+                                        System.out.println("cry = /cry");
+                                        System.out.println("do something fun = /fun");
+                                        System.out.println("");
+                                        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        String u = input.next();
+                                        if (u.equals("/bruh")) {
+                                        System.out.println("correct answer!");
+                                        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        System.out.println("Age: 20");
+                                        System.out.println("You are on a bridege...");
+                                        System.out.println("");
+                                        System.out.println("options:");
+                                        System.out.println("jump = /yeet");
+                                        System.out.println("walk = /walk");
+                                        System.out.println("");
+                                        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        String v = input.next();
+                                        if (v.equals("/walk")) {
+                                        System.out.println("correct answer!");
+                                        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        System.out.println("Age: 21");
+                                        System.out.println("");
+                                        
+                                        
+                                        //20yo  
+                                        } else {
+                                        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        System.out.println("Result:");
+                                        System.out.println("  /////////////////////////////////////////////////////////////////");
+                                        System.out.println(" //Damn bro, you jumped of a bridge just because a girl left you//");
+                                        System.out.println("/////////////////////////////////////////////////////////////////");  
+                                        } // end of if-else
+                                        //19yo  
+                                        } else {
+                                      
+                                        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        System.out.println("Result:");
+                                        System.out.println("  //////////////////////////");
+                                        System.out.println(" //You cried to death lol//");
+                                        System.out.println("//////////////////////////");
+                                          
+                                        } // end of if-else
+                                        
+                                        //18yo  
+                                        } else {
+                                        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        System.out.println("Result:");
+                                        System.out.println("  //////////////////////////////////////////////////////");
+                                        System.out.println(" //You died of foot funguus BUT you got the money tho//");
+                                        System.out.println("//////////////////////////////////////////////////////");
+                                          
+                                        } // end of if-else
+                                        //17yo                                                            
+                                        } else {
+                                          System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                          System.out.println("Result:");
+                                          System.out.println("  ////////////////////////");
+                                          System.out.println(" //You got syphylis lol//");
+                                          System.out.println("////////////////////////");
+                                          
+                                        } // end of if-else
+                                        
+                                      //16yo  
+                                      } else {
+                                        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        System.out.println("Result:");
+                                        System.out.println("  ////////////////////////////////");
+                                        System.out.println(" //You got alcohol poisoned lol//");
+                                        System.out.println("////////////////////////////////");
+                                      } // end of if-else
+                                     
+                                      //15yo  
+                                    } else {
+                                      System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                      System.out.println("Result:");    
+                                      System.out.println("  ////////////////////////////////");
+                                      System.out.println(" ///You died of lung cancer lol//");
+                                      System.out.println("////////////////////////////////");
+                                      
+                                    } // end of if-else
+     
+                                  //14yo  
+                                  } else {
+                                    System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                    System.out.println("");
+                                    System.out.println("Result:");
+                                    System.out.println("  /////////////////////////");
+                                    System.out.println(" //You died of horny lol//");
+                                    System.out.println("/////////////////////////");
+                                    
+                                  } // end of if-else
+                             
+                                //13yo  
+                                } else {
+                                  System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                  System.out.println("");
+                                  System.out.println("Result:");
+                                  System.out.println("  //////////////////////////////////////////////////////////////////////////");
+                                  System.out.println(" //Some kid in school ran amok bcs the class failed the test and you died//");
+                                  System.out.println("//////////////////////////////////////////////////////////////////////////");
+                                  
+                                } // end of if-else
+                            //12yo
+                                } else { 
+                                System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                System.out.println("");
+                                System.out.println("Result:");
+                                System.out.println("  //////////////////////////");
+                                System.out.println(" //You got diabetes and died///");
+                                System.out.println("//////////////////////////");
+                              } // end of if-else
+                            //11yo  
+                            } else {
+                              System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                              System.out.println("");
+                              System.out.println("Result:");
+                              System.out.println("  /////////////////////////////////////////////////////////////");
+                              System.out.println(" //You failed your life and got homeless. You died of hunger//");
+                              System.out.println("/////////////////////////////////////////////////////////////");
+                              
+                            } // end of if-else
+                            
+                          //10yo  
+                          } else { 
+                            System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");;
+                            System.out.println("");
+                            System.out.println("Result:");
+                            System.out.println("  //////////////////////////");
+                            System.out.println(" //Why didn't you pick Minecraft?//");
+                            System.out.println("//////////////////////////");
+                            return;
+                            
+                          } // end of if-else
+                          
+                          //9yo
+                        } else {
+                          System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                          System.out.println("");
+                          System.out.println("Result:");
+                          System.out.println("  ////////////");
+                          System.out.println(" //FORTNITE//");
+                          System.out.println("////////////");
+                          return;
+                          
+                        } // end of if-else
+                        
+                       
+                       //8yo 
+                      } else {
+                       System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                      System.out.println("");
+                      System.out.println("Result:");  
+                      System.out.println("  /////////////////////////////////////");
+                      System.out.println(" //You don't have any friends, loser//");
+                      System.out.println("/////////////////////////////////////");
+                      return;
+                        
+                      } // end of if-else
+                      
+                    //7yo  
+                    } else {
+                      System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                      System.out.println("");
+                      System.out.println("Result:");
+                      System.out.println("  ///////////");
+                      System.out.println(" //Bro wtf//");
+                      System.out.println("///////////");
+                      return;
+                      
+                    } // end of if-else
+                    
+                  //6yo   
+                  } else {
+                    System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                    System.out.println("");
+                    System.out.println("Result:");
+                    System.out.println("  ////////////////////////////////////////////");
+                    System.out.println(" //Your mother shot you with your dad's gun//");
+                    System.out.println("////////////////////////////////////////////");
+                    return;
+                    
+                  } // end of if-else
+                  
+                  
+                 //5yo 
+                } else {
+                  System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                  System.out.println("");
+                  System.out.println("Result:");
+                  System.out.println("  /////////////////////////");
+                  System.out.println(" //You got poisoned bruh//");
+                  System.out.println("/////////////////////////");
+                  return;
+                  
+                } // end of if-else
+                
+              //4yo  
+              } else {
+                System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                System.out.println("");
+                System.out.println("Result:");
+                System.out.println("  ///////////////////////////////////////////");
+                System.out.println(" //You don't understand the world and died//");
+                System.out.println("///////////////////////////////////////////");
+                return;
+              } // end of if-else
+              
+            //3yo  
+            } else {
+              System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+              System.out.println("");
+              System.out.println("Result:");
+              System.out.println("  ///////////////////////////////////////////////////////////////");
+              System.out.println(" //You died because you didn't concentrate when you got robbed//");
+              System.out.println("///////////////////////////////////////////////////////////////");
+              return;
+            } // end of if-else
+              
+          //2yo    
+          } else {
+            System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            System.out.println("");
+            System.out.println("Result:");
+            System.out.println("  ////////////////////////////////////////////////////////////////////////////////////////////////");
+            System.out.println(" //You cannot talk so when so the bankrobber shot you because you didn't tell him the bank code//");
+            System.out.println("////////////////////////////////////////////////////////////////////////////////////////////////");
+            return;
+          } // end of if-else
+              
+        //1yo      
+              } else { 
+        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"); 
+        System.out.println("");       
+        System.out.println("Result:");  
+        System.out.println("  ////////////////////////////////////////////");  
+        System.out.println(" //You can't run away so a car override you//");
+        System.out.println("////////////////////////////////////////////");  
+        return;                                                             
+          
+                                                                    
+          
+          
+              } // end of if-else
+        
+          
+        } // end of if  
+        } // end of if
+        
       
-    } // end of if-else
-    
-    
-    
-  
-    // TODO hier Quelltext einfügen
-    
-  } // end of bStartgame_ActionPerformed
 
-  public void b_ActionPerformed(ActionEvent evt) {
     
-    // TODO hier Quelltext einfügen
     
-  } // end of b_ActionPerformed
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  } // end of main
+      
+} // end of class LifeSimulator
 
-  // Ende Methoden
-} // end of class LifeSimulator2
+        
